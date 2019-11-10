@@ -1,6 +1,8 @@
 ## vue组件props编辑器
 
-# test
+vue + ts 的练手项目
+
+# 运行test
 ```
 npm run test
 ```

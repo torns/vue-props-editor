@@ -1,12 +1,13 @@
 {
-  "name": "vue-ts-demo",
+  "name": "vue-props-editor",
   "version": "0.1.0",
-  "private": true,
+  "repository": "https://github.com/a876691666/vue-props-editor.git",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "webpack-dev-server --config webpack.test.config.js --hot",
     "dev": "webpack-dev-server --config webpack.config.js --hot"
   },
+  "keywords": ["vue", "vue-props-editor", "typescript"],
   "dependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "element-ui": "^2.12.0",
