@@ -80,5 +80,6 @@ export default class App extends Vue {}
 
 <style lang="scss">
 .vue-props-editor {
+  color: #000;
 }
 </style>
