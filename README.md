@@ -7,6 +7,16 @@ vue + ts 的练手项目
 npm run test
 ```
 
+# 打包
+```
+npm run build
+```
+
+# 分析
+```
+npm run report
+```
+
 # 发布npm
 ```
 npm publish

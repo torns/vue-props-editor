@@ -1,15 +1,16 @@
 import Vue, { VueConstructor } from "vue";
 
-import ElementUI from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
+import Tree from "element-ui/lib/tree";
+import Drawer from "element-ui/lib/drawer";
+
+import "element-ui/lib/theme-chalk/tree.css";
+import "element-ui/lib/theme-chalk/drawer.css";
 
 import Frame from "./Frame/index.vue";
 import { mainClass } from "./config";
 
-const VuePortal = require("@linusborg/vue-simple-portal");
-
-Vue.use(ElementUI);
-Vue.use(VuePortal, { name: "portal" });
+Vue.component('ElTree', Tree);
+Vue.component('ElDrawer', Drawer);
 
 export default function install(Vue: VueConstructor<Vue>, options: object) {
   const mainDom: HTMLDivElement = document.createElement("div");

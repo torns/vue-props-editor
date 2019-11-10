@@ -1,32 +1,25 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const webpack = require("webpack");
 const tsImportPluginFactory = require("ts-import-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
-    app: "./src/test/main.ts"
+    "vue-props-editor": "./src/index.ts"
   },
   mode: "development",
-  devtool: "inline-source-map",
-  devServer: {
-    contentBase: "./dist",
-    hot: true
-  },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: "Hot Module Replacement",
-      template: "./src/test/index.html"
-    }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new BundleAnalyzerPlugin()
   ],
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].common.js",
     path: path.resolve(__dirname, "dist")
   },
   resolve: {
