@@ -9,15 +9,17 @@ module.exports = {
     "vue-props-editor": "./src/index.ts"
   },
   mode: "development",
+  // devtool: "inline-source-map",
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new VueLoaderPlugin(),
+    new VueLoaderPlugin()
   ],
   output: {
     filename: "[name].common.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    libraryTarget: "umd"
   },
   resolve: {
     // 将 `.ts` 添加为一个可解析的扩展名。

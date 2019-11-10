@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const webpack = require("webpack");
-const tsImportPluginFactory = require("ts-import-plugin");
 
 module.exports = {
   entry: {
@@ -16,7 +15,6 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Hot Module Replacement",
       template: "./src/test/index.html"
@@ -72,13 +70,6 @@ module.exports = {
         test: /\.ts$/,
         loader: "ts-loader",
         options: {
-          transpileOnly: true,
-          getCustomTransformers: () => ({
-            before: [tsImportPluginFactory(/** options */)]
-          }),
-          compilerOptions: {
-            module: "es2015"
-          },
           appendTsSuffixTo: [/\.vue$/]
         }
       },
