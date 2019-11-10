@@ -6,3 +6,8 @@ vue + ts 的练手项目
 ```
 npm run test
 ```
+
+# 发布npm
+```
+npm publish
+```
