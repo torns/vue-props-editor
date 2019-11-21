@@ -3,7 +3,7 @@ import router from "./router";
 import store from "./store";
 import App from "./App.vue";
 
-import Main from "../../dist/vue-props-editor.common.js";
+import Main from "../index";
 
 Vue.config.productionTip = false;
 

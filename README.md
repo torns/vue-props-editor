@@ -7,12 +7,12 @@ vue + ts 的练手项目
 npm run test
 ```
 
-# 打包
+# 打包准备发布
 ```
 npm run build
 ```
 
-# 分析
+# 打包分析
 ```
 npm run report
 ```

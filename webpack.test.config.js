@@ -6,7 +6,7 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    app: "./src/test/main.ts"
+    app: "./src/test/main.js"
   },
   mode: "development",
   devtool: "inline-source-map",
@@ -15,6 +15,7 @@ module.exports = {
     hot: true
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Hot Module Replacement",
       template: "./src/test/index.html"
@@ -28,8 +29,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist")
   },
   resolve: {
-    // 将 `.ts` 添加为一个可解析的扩展名。
-    extensions: [".ts", ".js"],
+    extensions: [".js"],
     alias: {
       "@": path.resolve(__dirname, "src")
     }
@@ -65,13 +65,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["vue-style-loader", "css-loader"]
-      },
-      {
-        test: /\.ts$/,
-        loader: "ts-loader",
-        options: {
-          appendTsSuffixTo: [/\.vue$/]
-        }
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

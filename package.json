@@ -1,6 +1,6 @@
 {
   "name": "vue-props-editor",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "repository": "https://github.com/a876691666/vue-props-editor.git",
   "scripts": {
     "build": "webpack --config webpack.build.config.js",

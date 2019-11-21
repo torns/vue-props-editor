@@ -2,13 +2,12 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const webpack = require("webpack");
-const tsImportPluginFactory = require("ts-import-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
-    "vue-props-editor": "./src/index.ts"
+    "vue-props-editor": "./src/index.js"
   },
   mode: "development",
   plugins: [
@@ -23,8 +22,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist")
   },
   resolve: {
-    // 将 `.ts` 添加为一个可解析的扩展名。
-    extensions: [".ts", ".js"],
+    extensions: [".js"],
     alias: {
       "@": path.resolve(__dirname, "src")
     }
@@ -60,20 +58,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["vue-style-loader", "css-loader"]
-      },
-      {
-        test: /\.ts$/,
-        loader: "ts-loader",
-        options: {
-          transpileOnly: true,
-          getCustomTransformers: () => ({
-            before: [tsImportPluginFactory(/** options */)]
-          }),
-          compilerOptions: {
-            module: "es2015"
-          },
-          appendTsSuffixTo: [/\.vue$/]
-        }
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
